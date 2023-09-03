@@ -1,11 +1,11 @@
 local gameId = game.GameId
 
-if gameId == "662417684" then
+if gameId == 662417684 then
    loadstring(game:HttpGet("https://raw.githubusercontent.com/Fe773Vdoa/GsiaVei72Jeoa8ehIeuUHsHs7/main/GdiHdy7JfiIIdb7"))() 
 
 
 
 local gameId = game.GameId
 
-if gameId == "13822889" then
+if gameId == 13822889 then
    https://raw.githubusercontent.com/Fe773Vdoa/kJw7HeuJe8Hs8Hs886LumberTycoon/main/iHaubshaHy67527282LumberTycoon
