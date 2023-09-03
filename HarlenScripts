@@ -1,10 +1,59 @@
-local gameId = game.GameId
+function  readKey()
+    local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+    if readfile("/BDB-Sila/key.txt") == key then
+        OrionLib:MakeNotification({
+                        Name = "Correct Key!",
+                        Content = "Running script...",
+                        Time = 5
+                    })
+        run()
+    else
+        local Window = OrionLib:MakeWindow({Name = "Key window (by Sila)", IntroText= "Sila Scripts", HidePremium = false, SaveConfig = false})
 
-if gameId == 662417684 then
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/Fe773Vdoa/GsiaVei72Jeoa8ehIeuUHsHs7/main/GdiHdy7JfiIIdb7"))() 
-else
+        local Tab = Window:MakeTab({
+            Name = "Key",
+            PremiumOnly = false
+        })
 
+        local Section = Tab:AddSection({
+            Name = "Put the key below"
+        })
 
-if gameId == 13822889 then
-   loadstring(game:HttpGet("https://raw.githubusercontent.com/Fe773Vdoa/kJw7HeuJe8Hs8Hs886LumberTycoon/main/iHaubshaHy67527282LumberTycoon"))()
-else
+        Tab:AddTextbox({
+            Name = "Your key",
+            Callback = function(Value)
+                inputKey = Value
+                if inputKey == key then
+                    OrionLib:MakeNotification({
+                        Name = "Correct Key!",
+                        Content = "Running script...",
+                        Time = 5
+                    })
+                    writefile("/BDB-Sila/key.txt", key)
+                    run()
+
+                else
+                    OrionLib:MakeNotification({
+                        Name = "Incorrect Key!",
+                        Content = "Get the correct key in the button below",
+                        Time = 5
+                    })
+                end   
+            end      
+        })
+
+        Tab:AddButton({
+            Name = "Get Key",
+            Callback = function()
+                setclipboard(link)
+                OrionLib:MakeNotification({
+                        Name = "Copied to your clipboard!",
+                        Content = "Paste it in your browser and follow the steps!",
+                        Time = 6
+                    })
+            end    
+        })
+        end
+end 
+
+OrionLib:Init()
